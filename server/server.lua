@@ -23,28 +23,24 @@ end)
 
 RegisterNetEvent('esx_bobbypin:notifyTarget')
 AddEventHandler('esx_bobbypin:notifyTarget', function(target)
-
+  
   local targetXplayer = ESX.GetPlayerFromId(target)
+  print('triggering for target: ' ..tostring(targetXplayer.source))
 
-
-  TriggerClientEvent("mythic_progressbar:client:progress", targetXplayer.source, {
+  TriggerClientEvent("mythic_progbar:client:progress", targetXplayer.source, {
     name = "target_picking_cuffs",
     duration = Config.Time * 1000,
     label = "Someone is trying to uncuff you",
     useWhileDead = false,
-    canCancel = false,
+    canCancel = true,
     controlDisables = {
       disableMovement = true,
       disableCarMovement = true,
       disableMouse = false,
       disableCombat = true,
     },
-    animation = {
-      animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
-      anim = "machinic_loop_mechandplayer",
-      flags = 49,
-    },
   }, function(status)
+    if not status then
+    end
   end)
-
 end)

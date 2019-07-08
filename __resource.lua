@@ -12,5 +12,5 @@ client_scripts {
 }
 
 dependency{
-    'mythic_progressbar'
+    'mythic_progbar'
 }

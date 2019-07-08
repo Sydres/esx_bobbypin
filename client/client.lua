@@ -28,10 +28,10 @@ AddEventHandler('esx_bobbypin:use', function()
 
             TriggerServerEvent('esx_bobbypin:notifyTarget', GetPlayerServerId(closestPlayer))
 
-            TriggerEvent("mythic_progressbar:client:progress", {
-                name = "picking_cuffs",
+            TriggerEvent("mythic_progbar:client:progress", {
+                name = "Picking_Cuffs",
                 duration = Config.Time * 1000,
-                label = "Stay still, attempting to pick cuffs",
+                label = "Attempting to pick cuffs.",
                 useWhileDead = false,
                 canCancel = true,
                 controlDisables = {
@@ -39,8 +39,7 @@ AddEventHandler('esx_bobbypin:use', function()
                     disableCarMovement = true,
                     disableMouse = false,
                     disableCombat = true,
-                },
-                animation = {
+                }, animation = {
                     animDict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
                     anim = "machinic_loop_mechandplayer",
                     flags = 49,
